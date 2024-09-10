@@ -1,7 +1,7 @@
 package com.envigite.horoscopapp.domain
 
-import com.envigite.horoscopapp.data.network.response.PredictionResponse
+import com.envigite.horoscopapp.domain.model.PredictionModel
 
 interface Repository {
-    suspend fun getPrediction(sign: String): PredictionResponse?
+    suspend fun getPrediction(sign: String): PredictionModel?
 }

@@ -45,7 +45,7 @@ android {
 
 dependencies {
     val navVersion = "2.7.1"
-    val daggerVersion = "2.44"
+    val daggerVersion = "2.52"
     val retrofitVersion = "2.11.0"
 
     implementation(libs.androidx.core.ktx)

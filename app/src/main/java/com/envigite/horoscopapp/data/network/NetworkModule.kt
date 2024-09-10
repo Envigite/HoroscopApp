@@ -1,5 +1,7 @@
 package com.envigite.horoscopapp.data.network
 
+import com.envigite.horoscopapp.data.RepositoryImpl
+import com.envigite.horoscopapp.domain.Repository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,7 +25,12 @@ object NetworkModule {
     }
 
     @Provides
-    fun provideHoroscopeApiService(retrofit: Retrofit): HoroscopeApiService{
+    fun provideHoroscopeApiService(retrofit: Retrofit): HoroscopeApiService {
         return retrofit.create(HoroscopeApiService::class.java)
+    }
+
+    @Provides
+    fun provideRepository(apiService: HoroscopeApiService): Repository {
+        return RepositoryImpl(apiService)
     }
 }

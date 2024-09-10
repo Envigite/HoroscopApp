@@ -8,17 +8,17 @@ class HoroscopeProvider @Inject constructor(){
     fun getHoroscopes(): List<HoroscopeInfo> {
         return listOf(
             Aries,
-            Tauro,
-            Geminis,
+            Taurus,
+            Gemini,
             Cancer,
             Leo,
             Virgo,
             Libra,
-            Escorpio,
-            Sagitario,
-            Capricornio,
-            Acuario,
-            Piscis
+            Scorpio,
+            Sagittarius,
+            Capricorn,
+            Aquarius,
+            Pisces
         )
     }
 }
