@@ -23,12 +23,22 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            resValue("String", "Envigite", "HoroscopApp")
+
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
+        }
+        getByName("debug") {
+            isDebuggable = true
+            resValue("String", "Envigite", "[DEBUG] HoroscopApp")
+            buildConfigField("String", "BASE_URL", "\"https://newastro-debug.vercel.app/\"")
         }
     }
     compileOptions {
@@ -38,8 +48,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -66,6 +77,8 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:$daggerVersion")
 
     //Retrofitt
-    implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
-    implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    //LoggingInterceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 }

@@ -1,10 +1,12 @@
 package com.envigite.horoscopapp.ui.home
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.setPadding
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -33,6 +35,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUI() {
         initNavigation()
+        listenerDanilo()
+    }
+
+    private fun listenerDanilo() {
+        binding.main.setOnApplyWindowInsetsListener(null)
     }
 
     private fun initNavigation() {
