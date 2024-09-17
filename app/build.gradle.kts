@@ -31,14 +31,14 @@ android {
                 "proguard-rules.pro"
             )
 
-            resValue("String", "Envigite", "HoroscopApp")
+            resValue("string", "envigite", "HoroscopApp")
 
             buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
         }
         getByName("debug") {
             isDebuggable = true
-            resValue("String", "Envigite", "[DEBUG] HoroscopApp")
-            buildConfigField("String", "BASE_URL", "\"https://newastro-debug.vercel.app/\"")
+            resValue("string", "envigite", "[DEBUG] HoroscopApp")
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
         }
     }
     compileOptions {
