@@ -19,7 +19,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.envigite.horoscopapp.ui.CustomTestRunner"
     }
 
     buildTypes {
@@ -71,8 +71,15 @@ dependencies {
     testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
     testImplementation("io.mockk:mockk:1.13.12")
 
+    //UITesting
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1")
+    androidTestImplementation("androidx.test.espresso:espresso-intents:3.4.0")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.52")
+    androidTestImplementation("androidx.fragment:fragment-testing:1.8.3")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.52")
+
 
     //NavComponent
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
